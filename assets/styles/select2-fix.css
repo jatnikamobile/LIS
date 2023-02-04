@@ -1,0 +1,9 @@
+.select2-dropdown,
+.select2-container--default .select2-selection--single,
+.select2-container--default .select2-selection--multiple,
+.select2-container--default .select2-selection--multiple .select2-selection__choice,
+.select2-container--classic .select2-selection--single,
+.select2-container--classic .select2-selection--multiple,
+.select2-container--classic .select2-selection--multiple .select2-selection__choice {
+	border-radius: 0px;
+}
