@@ -79,7 +79,7 @@ class HasilPemeriksaan extends CI_Controller
 							'ruangan' => $this->input->post('ruangan'), 'status_hasil' => $this->input->post('status_hasil'));
 
 		$hasil = $this->hpm->get_list_hasil_pemeriksaan_page2($params);
-		// print_r($params);
+		//print_r($hasil); exit();
 
         $no=0;
         $jumlah_unit=0;$switchcek='';
@@ -90,7 +90,7 @@ class HasilPemeriksaan extends CI_Controller
             }else{
             	$switchcek = '';
             }
-            if ( $value->tanda_bayar != null) {
+            if ($value->tanda_bayar != null) {
             	$stat_bayar = '<b  style="background-color:#000080;">SUDAH BAYAR</b>';
             }else{
             	$stat_bayar = '';
@@ -335,7 +335,7 @@ class HasilPemeriksaan extends CI_Controller
 		$config['cacheable']    = true; 
         $config['cachedir']     = './assets/';
         $config['errorlog']     = './assets/'; 
-        $config['imagedir']     = './assets/qr/';
+        $config['imagedir']     = 'assets/qr/'; //'./assets/qr/';
         $config['quality']      = true;
         $config['size']         = '1024'; 
         $config['black']        = array(224,255,255);
@@ -892,7 +892,7 @@ class MYPDF extends TCPDF {
     //Page header
     public function Header() {
         // Logo
-        $image_file = K_PATH_IMAGES.'logo_example.jpg';
+        $image_file = K_PATH_IMAGES.'logo.png'; //K_PATH_IMAGES.'logo_example.jpg';
         // $image_file = 'assets/images/kop_surat.png';
         $img = file_get_contents(base_url('assets/images/kop_surat.png'));
         $this->Image('@' . $img, 0, 0, 200, 300, 'png', '', 'T', true, 300, '', false, false, 0, true, true, false);
