@@ -352,6 +352,8 @@ class HasilPemeriksaan extends CI_Controller
 		$this->ciqrcode->generate($params);
 
 		$detail = $this->hpm->search_group_print($notransaksi, $custom_detail);
+		//print_r($detail); exit();
+
 		// $data_header = $this->mth->find_by_code($transaction_code);
 		// $data_barang = $this->model_transaction->find_by_code($transaction_code);
 		// $data_barang_row = $this->model_transaction->find_by_code_num_row($transaction_code);
@@ -560,6 +562,13 @@ class HasilPemeriksaan extends CI_Controller
 	               
 	            $statHJ = 0; $a=0; $k=0; 
 	            foreach ($detail[$i]['detail'] as $d): 
+					/* ocha */
+					$bintang = $this->hpm->checkNilaiNormal([
+						'kddetail' => $d->KDDetail,
+						'gender' => $head->KdSex,
+						'nilai' => $d->Hasil
+					]);
+					/* ---- */
 	            // if (($d->NoPrint)!='1') :
 	            if (($d->Hasil != '' && $d->KdInput != '4') || ($d->KdInput == '4' && $d->Hasil == '')):  
 		            $a++; 
@@ -575,6 +584,7 @@ class HasilPemeriksaan extends CI_Controller
 				   border-top: none; border-bottom: none;font-size: 12px; 
 				   text-align:left; \" > ".$d->NMDetail." </td>";
 		                else: 
+
 		                    if($d->fixSatuan == null || $d->fixSatuan == ""):
 		                        $html_body.="<td  style=\"padding-left: 20px; font-weight: bold; border-collapse: collapse; border-left: 1 solid black; border-right: 1 solid black;
 				   border-top: none; border-bottom: none;font-size: 12px; 
@@ -586,7 +596,10 @@ class HasilPemeriksaan extends CI_Controller
 		                    endif;
 		                endif; 
 
-		                $hasil = $d->Hasil; 
+						//$hasil = '['.$d->KDDetail.'] '.$d->Hasil.$bintang;
+						$hasil = $d->Hasil.$bintang;
+		                //$hasil = $d->Hasil; 
+
 		                // if($d->NMDetail == 'HBsAG Titer'): 
 		                // 	$hasil = number_format((float)$hasil, 2); 
 		                // endif; 
