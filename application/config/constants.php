@@ -85,7 +85,7 @@ defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automat
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
 
 define('APP_NAME', 'Modul Laboraturium');
-define('INST_NAME', 'RSUD RAJA AHMAD TABIB');
+define('INST_NAME', 'RSUD Majalaya');
 define('INST_UNIT', 'PENCEGAHAN DAN PENGANGGULANGAN INFEKSI');
 define('INST_LOGO', 'logo.png');
-define('INST_ADDR', 'KEPULAUAN RIAU');
+define('INST_ADDR', 'Majalaya');
