@@ -3,13 +3,14 @@
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta charset="utf-8" />
-		<title>Login | <?=(APP_NAME ?? '')?></title>
+		<title>Login | <?=(APP_NAME() ?? '')?></title>
 
 		<meta name="description" content="User login page"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
         
-        <link rel="icon" href="<?=base_url('assets/images/thumb/'.(INST_LOGO ?? ''))?>" type="image/png" sizes="16x16">
-		<!-- bootstrap & fontawesome -->
+        <!--<link rel="icon" href="<?=base_url('assets/images/thumb/'.(INST_LOGO ?? ''))?>" type="image/png" sizes="16x16">-->
+		<link rel="icon" href="<?= APP_INST_LOGO()?>" sizes="16x16">
+        <!-- bootstrap & fontawesome -->
 		<link rel="stylesheet" href="<?=base_url('assets/new/css/bootstrap.min.css')?>" />
 		<link rel="stylesheet" href="<?=base_url('assets/new/font-awesome/4.5.0/css/font-awesome.min.css')?>" />
 
@@ -45,9 +46,10 @@
 							<div class="center">
 								<h1>
 									<!-- <i class="ace-icon fa fa-book green"></i> -->
-									<span class="blue" id="id-text2"><?=(APP_NAME ?? '')?></span>
+                                    <!--<img src="<?= APP_INST_LOGO() ?>" style="width: 100px"/><br/>-->
+									<span class="blue" id="id-text2"><?=(APP_NAME() ?? '')?></span>
 								</h1>
-								<h4 class="blue" id="id-company-text">&copy;<?=(INST_NAME ?? '')?><br></h4>
+								<h4 class="blue" id="id-company-text">&copy;<?=(APP_INST_NAME() ?? '')?><br></h4>
 							</div>
 
 							<div class="space-6"></div>

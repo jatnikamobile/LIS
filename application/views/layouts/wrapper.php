@@ -4,9 +4,10 @@
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta charset="utf-8" />
-		<title><?=isset($title)?$title:''?> | <?=(APP_NAME ?? '')?></title>
+		<title><?=isset($title)?$title:''?> | <?=(APP_NAME() ?? '')?></title>
 		<!-- Favicon-->
-		<link rel="icon" href="<?=base_url('assets/images/thumb/'.(INST_LOGO ?? ''))?>" type="image/png" sizes="16x16">
+		<link rel="icon" href="<?= APP_INST_LOGO() ?>" sizes="16x16">
+		<!--<link rel="icon" href="<?=base_url('assets/images/thumb/'.(INST_LOGO ?? ''))?>" type="image/png" sizes="16x16">-->
     	<!-- <link rel="icon" href="<?php //echo $this->konfigurasi_model->listing()->logo;?>" type="image/x-icon"> -->
 
 		<meta name="description" content="" />
@@ -110,7 +111,10 @@
 				</button>
 				<div class="navbar-header pull-left">
 					<a href="<?=base_url()?>" class="navbar-brand">
-						<small><img src="<?=base_url('assets/images/thumb/'.(INST_LOGO ?? ''))?>" alt="LOGO INST" width="25">&nbsp;<?=(APP_NAME ?? '')?></small>
+						<small>
+							<!--<img src="<?=base_url('assets/images/thumb/'.(INST_LOGO ?? ''))?>" alt="LOGO INST" width="25">&nbsp;<?=(APP_NAME ?? '')?>-->
+							<img src="<?= APP_INST_LOGO()?>" alt="<?= APP_INST_NAME()?>" width="25">&nbsp;<?=(APP_NAME() ?? '')?>
+						</small>
 					</a>
 				</div>
 				<div class="navbar-buttons navbar-header pull-right" role="navigation">

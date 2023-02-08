@@ -380,7 +380,7 @@ class HasilPemeriksaan extends CI_Controller
 
 			// set document information
 			$pdf->SetCreator(PDF_CREATOR);
-			$pdf->SetAuthor('Nicola Asuni');
+			$pdf->SetAuthor(APP_INST_NAME());
 			$pdf->SetTitle('Hasil Lab '.$notransaksi);
 			$pdf->SetSubject('TCPDF Tutorial');
 			$pdf->SetKeywords('TCPDF, PDF, example, test, guide');
@@ -905,9 +905,11 @@ class MYPDF extends TCPDF {
     //Page header
     public function Header() {
         // Logo
-        $image_file = K_PATH_IMAGES.'logo.png'; //K_PATH_IMAGES.'logo_example.jpg';
+        $image_file = APP_INST_LOGO(); //K_PATH_IMAGES.'logo.png'; //K_PATH_IMAGES.'logo_example.jpg';
         // $image_file = 'assets/images/kop_surat.png';
-        $img = file_get_contents(base_url('assets/images/kop_surat.png'));
+
+		$imgbase64 = APP_INST_KOPSURAT();
+        $img = file_get_contents($imgbase64); //file_get_contents(base_url('assets/images/kop_surat.png'));
         $this->Image('@' . $img, 0, 0, 200, 300, 'png', '', 'T', true, 300, '', false, false, 0, true, true, false);
     }
 
