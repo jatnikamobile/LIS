@@ -772,7 +772,7 @@ class HasilPemeriksaan extends CI_Controller
 			         <td width=\"50%\">&nbsp;</td>
 			         <td width=\"50%\">
 			               <p>Dr Penanggung Jawab Laboratorium</p>
-			               <p>RSUD RAJA AHMAD TABIB TANJUNG PINANG</p>
+			               <p>".APP_INST_NAME()."</p>
 			               <img width=\"70px\" height=\"70px\" src=\"@" . preg_replace('#^data:image/[^;]+;base64,#', '', $imgqrdecode) . "\">
 			               
 			         </td>
