@@ -184,7 +184,7 @@ class MasterTarif extends CI_Controller {
 	public function delete_group_pemeriksaan()
 	{
 		$kdgroup = $this->input->post('kdgroup');
-		$post = $this->mt->delete_sub_pemeriksaan($kdgroup);
+		$post = $this->mt->delete_group_pemeriksaan($kdgroup); //$this->mt->delete_sub_pemeriksaan($kdgroup);
 		$this->output
 	    	->set_content_type('json')
 	    	->set_output(json_encode($post));

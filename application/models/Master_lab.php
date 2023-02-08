@@ -52,7 +52,7 @@ class Master_lab extends CI_Model {
 
 	public function lab_group_post($data)
 	{
-		$cek = $this->sv->order_by('KDGroup','DESC')->limit(1)->get('fGroupLab')->row();
+		$cek = $this->sv->order_by('CAST(KDGroup AS int)','DESC')->limit(1)->get('fGroupLab')->row();
 		$cek = $cek->KDGroup+1;
 		$input = $this->sv->insert('fGroupLab',['KDGroup'=> $cek, 'NmGroup'=>$data['NmGroup']]);
 		if ($input) {
