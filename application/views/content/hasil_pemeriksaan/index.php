@@ -1,3 +1,4 @@
+
 <div class="row">
   <div class="col-sm-12 col-md-12" style="border: 1px solid grey; border-radius: 5px;">
     <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
@@ -125,7 +126,7 @@
         <div class="col-sm-6">
           <div class="form-group">
             <label class="col-sm-2 control-label no-padding-right">Analisis Dokter</label>
-            <textarea class="form-control input-sm" id="analisis" name="analisis"></textarea>
+            <textarea cols="20" id="analisis" name="analisis" rows="10" class="form-control input-sm"></textarea>
             <br/>
             <label class="col-sm-2 control-label no-padding-right">Catatan</label>
             <textarea class="form-control input-sm" id="Kesan" name="Kesan"></textarea>
@@ -225,6 +226,14 @@
     </div>
   </div>
 </div>
+  <script>
+    CKEDITOR.replace('analisis', {
+      height: 100,
+      removeButtons: 'PasteFromWord'
+    });
+
+
+  </script>
 <script type="text/javascript">
   var kdgroup = '';
   $(document).ready(function(){
@@ -242,6 +251,7 @@
     ev.preventDefault();
     let btn = $('#btnSaveHasil');
     var tgl_hasil = $('#TglHasil').val();
+    // var analisis = CKEDITOR.instances.analisis.getData();
     let oldText = btn.html();
     btn.html('<i class="fa fa-spin fa-spinner"></i> ' + 'tunggu...');
     btn.prop('disabled', true);

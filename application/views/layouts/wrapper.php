@@ -87,6 +87,7 @@
 	    <script src="<?php echo base_url('assets/fancybox/dist/jquery.fancybox.min.js')?>"></script>
 	    <script src="<?php echo base_url('assets/jquery.inputmask.bundle.js')?>"></script>
 	    <script src="<?php echo base_url('assets/scripts/debounce.js')?>"></script>
+	    <script src="<?php echo base_url('assets/ckeditor/ckeditor.js')?>"></script>
 		<script>
 		$(function($) {
 			// this script needs to be loaded on every page where an ajax POST may happen

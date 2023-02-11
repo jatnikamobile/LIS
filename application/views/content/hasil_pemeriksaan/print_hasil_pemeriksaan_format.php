@@ -146,7 +146,7 @@
                         <?php if (strlen($d->KDDetail) <= 5): ?>
                         <td class="garis-kiri" style="padding-left: 20px"><?= $d->NMDetail ?></td>
                         <?php else: ?>
-                           <?php if($d->Satuan == null || $d->Satuan == ""):?>
+                           <?php if($d->fixSatuan == null || $d->fixSatuan == ""):?>
                            <td class="garis-kiri" style="font-weight: bold; padding-left: 20px"><?= $d->NMDetail ?></td>
                            <?php else:?>
                            <td class="garis-kiri" style="padding-left: 30px"><?=$d->NMDetail?></td>
@@ -254,7 +254,7 @@
                            <td class="garis" ></td>
                         <?php endif; ?>
                         <?php if(!empty($hasil)) :?>
-                        <td class="garis" style="text-align:center"><?= $d->Satuan ?></td>
+                        <td class="garis" style="text-align:center"><?= $d->fixSatuan ?></td>
                         <?php endif; ?>
                         <td class="garis"  style="text-align:center"><?= $d->NilaiNormal ?></td>
 
