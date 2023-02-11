@@ -13,7 +13,7 @@ class HasilPemeriksaan_model extends MY_Model {
 
 	public function get_head_hasil_pemeriksaan($notran)
 	{
-		$data = $this->sv->select('head.Notran, head.Nolab, head.Regno, head.MedRec, headbilling.Tanggal as RegDate, headbilling.Jam, head.Firstname, register.KdSex, register.KdTuju, register.KdCbayar, head.Umurthn, head.Umurbln, head.Umurhari, head.Catatan, register.Sex, register.Bod, CAST(head.Tglhasil as DATE) as Tglhasil ,headbilling.JamSelesai as TglInput , head.Jamhasil, headbilling.KdDoc, headbilling.NmDoc, headbilling.KdBangsal, bangsal.NmBangsal, kelas.NMkelas, poli.NMPoli, dokter.NmDoc as dokterPemeriksa, master.Address, headbilling.Catatan, headbilling.Kesan, headbilling.Saran,dokter.C_PEGAWAI')->from('HeadHasil head')
+		$data = $this->sv->select('head.Notran, head.Nolab, head.Regno, head.MedRec, headbilling.Tanggal as RegDate, headbilling.Jam, head.Firstname, register.KdSex, register.KdTuju, register.KdCbayar, head.Umurthn, head.Umurbln, head.Umurhari, head.Catatan, register.Sex, register.Bod, CAST(head.Tglhasil as DATE) as Tglhasil ,headbilling.JamSelesai as TglInput , head.Jamhasil, headbilling.KdDoc, headbilling.NmDoc, headbilling.KdBangsal, bangsal.NmBangsal, kelas.NMkelas, poli.NMPoli, dokter.NmDoc as dokterPemeriksa, master.Address, headbilling.Catatan, head.Analisis_dokter, headbilling.Kesan, headbilling.Saran,dokter.C_PEGAWAI')->from('HeadHasil head')
 			->join('Register register', 'head.Regno = register.Regno')
 			->join('MasterPS master', 'register.Medrec = master.Medrec', 'LEFT')
 			->join('HeadBilLab headbilling', 'head.Notran = headbilling.NoTran')

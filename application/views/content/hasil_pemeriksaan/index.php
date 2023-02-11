@@ -124,7 +124,7 @@
       <div class="col-sm-12">
         <div class="col-sm-6">
           <div class="form-group">
-            <label class="col-sm-2 control-label no-padding-right">Catatan</label>
+            <label class="col-sm-2 control-label no-padding-right">Analisis Dokter</label>
             <textarea class="form-control input-sm" id="analisis" name="analisis"></textarea>
             <br/>
             <label class="col-sm-2 control-label no-padding-right">Catatan</label>

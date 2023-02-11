@@ -523,6 +523,7 @@ class HasilPemeriksaan extends CI_Controller
 	    	$catatan = $head->Catatan;
             $saran =  $head->Saran;
             $kesan = $head->Kesan;
+            $analisa = $head->Analisis_dokter;
             for ($i=0; $i < count($detail); $i++):
 	              	
 	            $html_body.="
@@ -743,7 +744,19 @@ class HasilPemeriksaan extends CI_Controller
 				}else{
 					$html_footer.="<tr>
 						<td align=\"left\">
-						<table width=\"100%\" class=\"table-font-size\" >
+						<table width=\"100%\" class=\"table-font-size\" >";
+
+					if (!empty($analisa)) {
+						$html_footer.="
+					         <tr>
+					            <td valign=\"top\" width=\"15%\">Analisis Dokter</td>
+					            <td width=\"85%\" valign=\"top\">: ".$analisa." <br></td>
+					            
+					         </tr>
+						";
+					}
+
+					$html_footer.="
 					         <tr>
 					            <td valign=\"top\" width=\"15%\">Catatan</td>
 					            <td width=\"85%\" valign=\"top\">: ".$catatan." <br></td>
