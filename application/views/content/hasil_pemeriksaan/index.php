@@ -125,6 +125,9 @@
         <div class="col-sm-6">
           <div class="form-group">
             <label class="col-sm-2 control-label no-padding-right">Catatan</label>
+            <textarea class="form-control input-sm" id="analisis" name="analisis"></textarea>
+            <br/>
+            <label class="col-sm-2 control-label no-padding-right">Catatan</label>
             <textarea class="form-control input-sm" id="Kesan" name="Kesan"></textarea>
             <br/>
             <label class="col-sm-2 control-label no-padding-right">Kesan</label>
@@ -291,6 +294,7 @@
         // $('#UmurHari').val(resp.Umurhari);
         // update usia setiap saat pengisian hasil
         sum_birth_day(resp.Bod);
+        $('#analisis').val(resp.analisis);
         $('#Kesan').val(resp.Catatan);
         $('#Kesan-1').val(resp.Kesan);
         $('#Saran').val(resp.Saran);
