@@ -920,4 +920,40 @@ class HasilPemeriksaan_model extends MY_Model {
 			'data', 'next_page', 'previous_page', 'count', 'current_page', 'paging', 'first_page', 'last_page'
 		);
 	}
+
+	/* ocha */
+	public function checkNilaiNormal($params=array()){
+		$kddetail = $params['kddetail'];
+		$gender = $params['gender'];
+		$nilai = $params['nilai'];
+		$minVal = 0;
+		$maxVal = 0;
+		$result = '';
+		$check = $this->sv->get_where('fPemeriksaanLab', array('KDDetail' => $kddetail))->row();
+
+		$minVal = ($gender == 'P' ? @$check->NNAwalWanita : @$check->NNAwalPria);
+		$maxVal = ($gender == 'P' ? @$check->NNAkhirWanita : @$check->NNAkhirPria);
+
+		$check2 = $this->sv->get_where('DetailPemeriksaan', array('KodeDetail' => $kddetail))->row();
+		if($check2){
+			$minVal = ($gender == 'P' ? @$check2->NNAwalWanita : @$check2->NNAwalPria);
+			$maxVal = ($gender == 'P' ? @$check2->NNAkhirWanita : @$check2->NNAkhirPria);
+		}
+		
+		/*
+		if(gettype($nilai) != 'string'){
+			
+		}
+		*/
+		if(isset($nilai)){
+			if((float)$nilai < (float)$minVal || (float)$nilai > (float)$maxVal){
+				$result = '*';
+			}
+		}
+		
+
+		return $result;
+		
+	}
+	/* ---- */
 }
