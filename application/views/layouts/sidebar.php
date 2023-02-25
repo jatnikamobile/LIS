@@ -15,11 +15,11 @@
                 <b class="arrow"></b>
                 <ul class="submenu">
                     <li class="hover <?=isset($sub1) && $sub1 == 'sub-hasillab'? 'active':''?>">
-                        <a href="<?=base_url('hasilpemeriksaan/index')?>"><i class="menu-icon fa fa-caret-right"></i> Hasil Pemeriksaan</a>
+                        <a href="<?=base_url('hasilPemeriksaan/index')?>"><i class="menu-icon fa fa-caret-right"></i> Hasil Pemeriksaan</a>
                         <b class="arrow"></b>
                     </li>
                     <li class="hover <?=isset($sub1) && $sub1 == 'sub-listhasil'? 'active':''?>">
-                        <a href="<?=base_url('hasilpemeriksaan/list_hasil_pemeriksaan')?>"><i class="menu-icon fa fa-caret-right"></i> List Hasil Pemeriksaan</a>
+                        <a href="<?=base_url('hasilPemeriksaan/list_hasil_pemeriksaan')?>"><i class="menu-icon fa fa-caret-right"></i> List Hasil Pemeriksaan</a>
                         <b class="arrow"></b>
                     </li>
                 </ul>
@@ -66,11 +66,11 @@
                 <b class="arrow"></b>
                 <ul class="submenu">
                     <li class="hover <?=isset($sub1) && $sub1 == 'sub-hasillab'? 'active':''?>">
-                        <a href="<?=base_url('hasilpemeriksaan/index')?>"><i class="menu-icon fa fa-caret-right"></i> Hasil Pemeriksaan</a>
+                        <a href="<?=base_url('hasilPemeriksaan/index')?>"><i class="menu-icon fa fa-caret-right"></i> Hasil Pemeriksaan</a>
                         <b class="arrow"></b>
                     </li>
                     <li class="hover <?=isset($sub1) && $sub1 == 'sub-listhasil'? 'active':''?>">
-                        <a href="<?=base_url('hasilpemeriksaan/list_hasil_pemeriksaan')?>"><i class="menu-icon fa fa-caret-right"></i> List Hasil Pemeriksaan</a>
+                        <a href="<?=base_url('hasilPemeriksaan/list_hasil_pemeriksaan')?>"><i class="menu-icon fa fa-caret-right"></i> List Hasil Pemeriksaan</a>
                         <b class="arrow"></b>
                     </li>
                 </ul>
@@ -81,12 +81,12 @@
                 </a> <b class="arrow"></b>
             </li>
             <li class="hover <?=isset($main_menu) && $main_menu == 'mastertarif'? 'active':''?>">
-                <a href="<?=base_url('mastertarif/master_tarif')?>">
+                <a href="<?=base_url('masterTarif/master_tarif')?>">
                     <i class="menu-icon fa fa-money"></i><span class="menu-text"> Master Tarif </span>
                 </a> <b class="arrow"></b>
             </li>
             <li class="hover <?=isset($main_menu) && $main_menu == 'nilainormal' ? 'active':''?>">
-                <a href="<?=base_url('mastertarif/index')?>">
+                <a href="<?=base_url('masterTarif/index')?>">
                     <i class="menu-icon fa fa-leaf"></i><span class="menu-text"> Nilai Normal </span>
                 </a> <b class="arrow"></b>
             </li>
