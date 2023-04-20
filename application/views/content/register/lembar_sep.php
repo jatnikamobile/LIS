@@ -78,7 +78,7 @@
 	<img class="logo" src="<?=base_url('assets/images/logobpjs1.png')?>" alt="LOGO BPJS">
 	<div style="display: inline-block; vertical-align: top; text-align: center; padding-left: 50px;">
 		<b>SURAT ELEGIBILITAS PESERTA</b><br>
-		<b>RSAU ESNAWAN ANTARIKSA</b><br>
+		<b>RSUD Majalaya</b><br>
 	</div>
 </div>
 <table style="width: 100%;">
